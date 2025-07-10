@@ -47,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
     print(await modelManager.isModelInstalled);
     
     if (!await modelManager.isModelInstalled) {
-      modelManager.downloadModelFromNetworkWithProgress("gemma3-1B-it-int4.task").listen(
+      modelManager.installModelFromAssetWithProgress(modelPath).listen(
         (progress) {
           print('Loading progress: $progress%');
         },
